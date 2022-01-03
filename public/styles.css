@@ -1,0 +1,13 @@
+body, html {
+    padding: 5px;
+    background: #333;
+    font-family: Rubik;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 100;
+    font-size: 3rem;
+}

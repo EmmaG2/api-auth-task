@@ -1,4 +1,18 @@
+const { validationResult } = require("express-validator");
+
+const errorsValidation = () => {
+    const errors = validationResult( req );
+    if ( !errors.isEmpty() ) {
+        return res.status(400).json({
+            ok: false,
+            errors: errors.mapped()
+        });
+    }
+}
+
 const crearUsuario = ( req, res ) => {
+
+    errorsValidation();
 
     const { email, username, password } = req.body;
     console.log(email, username, password);
@@ -11,6 +25,8 @@ const crearUsuario = ( req, res ) => {
 };
 
 const loginUsuario = ( req, res ) => {
+
+    errorsValidation();
 
     const { email, password } = req.body;
     console.log( email, password );
