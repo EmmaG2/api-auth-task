@@ -1,10 +1,14 @@
 const express = require('express');
 const cors = require('cors');
+const { dbConnection } = require('./db/config.js');
 require('dotenv').config();
 
 // crear el server
 const app = express();
 const port = process.env.PORT; 
+
+// Db
+dbConnection();
 
 // Directorio público
 app.use( express.static('public') )
@@ -12,7 +16,7 @@ app.use( express.static('public') )
 // CORS
 app.use( cors() );
 
-// lectura y parseo del body
+// lectura y parseo del bodyasdf 
 app.use( express.json() );
 
 // Rutas
